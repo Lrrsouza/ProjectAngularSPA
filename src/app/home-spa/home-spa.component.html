@@ -1,1 +1,20 @@
-<p>home-spa works!</p>
+<div>
+  <h2>Entre com Usuário GitHub</h2>
+
+  <form>
+    <label for="userName">Usuário:</label><br />
+    <input
+      type="text"
+      id="userName"
+      name="userName"
+      [(ngModel)]="userName"
+    /><br />
+    <button (click)="listeRepositoryCompont()">listar</button>
+  </form>
+  <div>
+    <div *ngFor="let item of repositoryList">
+      {{item.name}} <br> {{item.url}}
+
+    </div>
+  </div>
+</div>
