@@ -1,19 +1,19 @@
 <div>
-  <h2>Entre com Usuário GitHub</h2>
+  <h2>Entre com login GitHub</h2>
 
   <form>
-    <label for="userName">Usuário:</label><br />
+    <label for="userName">Login:</label><br />
     <input
       type="text"
       id="userName"
       name="userName"
       [(ngModel)]="userName"
     /><br />
-    <button (click)="listeRepositoryCompont()">listar</button>
+    <button (click)="listRepositories()">listar</button>
   </form>
   <div>
     <div *ngFor="let item of repositoryList">
-      {{item.name}} <br> {{item.url}}
+      {{item.name}} - {{item.url}}
 
     </div>
   </div>

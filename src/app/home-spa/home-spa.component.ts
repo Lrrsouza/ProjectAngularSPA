@@ -13,7 +13,7 @@ export class HomeSpaComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  listeRepositoryCompont() {
+  listRepositories() {
     this.repositoryList = [];
     this.service.listRepository(this.userName).subscribe((data: any) => {
       console.log('resultadoApi', data);
@@ -24,7 +24,7 @@ export class HomeSpaComponent implements OnInit {
         };
         this.repositoryList.push(repository);
       });
-      console.log('lista repositorio', this.repositoryList);
+      console.log('lista repositorios', this.repositoryList);
     });
   }
 }
