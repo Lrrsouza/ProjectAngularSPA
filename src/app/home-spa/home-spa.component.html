@@ -1,25 +1,27 @@
-<div>
-  <h2>login GitHub</h2>
-  <form id="label-form">
-    <label for="userName"></label><br />
-    <input
-      type="text"
-      id="userName"
-      name="userName"
-      [(ngModel)]="userName"
-    /><br />
-    <button id="button-list" (click)="listRepositories()">listar</button>
-  </form>
-  <br />
-  <div id="listRepository">
-    <div *ngFor="let item of repositoryList">
-      {{ item.name }} - {{ item.url }} <br /><br />
-    </div>
-  </div>
+<form id="label_form">
+  <label for="userName"></label><br />
+  <input
+    type="text"
+    id="userName"
+    name="userName"
+    [(ngModel)]="userName"
+  /><br />
 
-  <div id="liststarred">
-    <div *ngFor="let item of starredList">
-      {{ item.full_name}} <br /><br />
-    </div>
+  <button type="button" (click)="listRepositories()">listar</button>
+</form>
+<br />
+<div class="flex-item">
+  <div *ngFor="let item of repositoryList">
+    <p class="item">
+      {{ item.name }} <br />
+      {{ item.url }}
+    </p>
+    <br />
+  </div>
+</div>
+
+<div id="list_Starred">
+  <div *ngFor="let item of starredList">
+    <p class="item">{{ item.full_name }} <br /></p>
   </div>
 </div>

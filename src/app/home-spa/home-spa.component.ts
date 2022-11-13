@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApiGitHubService } from '../services/api-git-hub.service';
 @Component({
   selector: 'spa-home-spa',
@@ -32,11 +32,11 @@ export class HomeSpaComponent implements OnInit {
   }
 
     listStars() {
-    this.repositoryList = [];
+    this.starredList = [];
     this.service.listStars(this.userName).subscribe((data: any) => {
       console.log('resultadoStars', data);
       data.forEach((element: any) => {
-        const starred: {full_name: any } = {
+        const starred: {full_name: string } = {
           full_name: element.full_name,
         };
         this.starredList.push(starred);
