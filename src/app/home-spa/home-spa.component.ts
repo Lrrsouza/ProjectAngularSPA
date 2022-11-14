@@ -5,14 +5,12 @@ import { ApiGitHubService } from '../services/api-git-hub.service';
   templateUrl: './home-spa.component.html',
   styleUrls: ['./home-spa.component.scss'],
 })
-
 export class HomeSpaComponent implements OnInit {
   userName: string = '';
   repositoryList: { name: string; url: string }[] = [];
-  starredList: {full_name: string}[]= [];
+  starredList: { full_name: string }[] = [];
 
   constructor(private service: ApiGitHubService) {}
-
 
   ngOnInit(): void {}
 
@@ -31,17 +29,21 @@ export class HomeSpaComponent implements OnInit {
     });
   }
 
-    listStars() {
+  listStars() {
     this.starredList = [];
     this.service.listStars(this.userName).subscribe((data: any) => {
       console.log('resultadoStars', data);
       data.forEach((element: any) => {
-        const starred: {full_name: string } = {
+        const starred: { full_name: string } = {
           full_name: element.full_name,
         };
         this.starredList.push(starred);
       });
       console.log('lista starrend', this.starredList);
     });
+  }
+  getLists() {
+    this.listRepositories();
+    this.listStars();
   }
 }

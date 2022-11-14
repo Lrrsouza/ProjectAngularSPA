@@ -1,7 +1,25 @@
-form,
-.item {
-  display: flexbox;
-  vertical-align: auto;
-  padding: 1em;
-  border-bottom: 1px solid rgb(24, 10, 10);
+.container{
+  border-radius: 8px;
+  background-color: #e2e5e5;
+  padding: 30px;
+  margin: 20px;
+}
+
+input[type=text]{
+  width: 25%;
+  padding: 12px 20px;
+  margin: 20px 0;
+  display: inline-block;
+  border: 1px solid #1d1a1a ;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.item, .mat-typography {
+  border-radius: 5px;
+  box-shadow: 7px 7px 13px 0px rgba($color: black, $alpha: 1);
+  padding: 30px;
+  margin: 20px;
+  width: 400px;
+  transition: all 0.3s ease-out;
 }
