@@ -19,4 +19,5 @@ export class ApiGitHubService {
     `https://api.github.com/users/${userName}/starred`
       );
     };
-  }
+
+      }

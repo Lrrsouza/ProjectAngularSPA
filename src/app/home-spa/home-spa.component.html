@@ -11,9 +11,10 @@
     <button type="button" (click)="getLists()">listar</button>
   </form>
   <br />
-  <div class="circle"></div>
-  <img src="https://avatars.githubusercontent.com/u/90361650?v=4" /><br>
-  <label for="listRepositories">Repositories:</label><br />
+  <div class="avatar">
+
+  </div>
+  <label for="listRepositories"><h2>Repositories:</h2></label><br />
   <div class="flex-item">
     <div *ngFor="let item of repositoryList">
       <p class="item">
@@ -23,8 +24,8 @@
       <br />
     </div>
   </div>
-
-  <div class="flex-item">
+  <label for="starredList"><h2>Starred:</h2></label><br />
+  <div class="flex-item2">
     <div *ngFor="let item of starredList">
       <p class="item">{{ item.full_name }} <br /></p>
     </div>

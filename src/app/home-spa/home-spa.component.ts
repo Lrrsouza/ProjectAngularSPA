@@ -19,9 +19,10 @@ export class HomeSpaComponent implements OnInit {
     this.service.listRepository(this.userName).subscribe((data: any) => {
       console.log('resultadoApi', data);
       data.forEach((element: any) => {
-        const repository: { name: string; url: string } = {
+        const repository: { name: string; url: string; } = {
           name: element.name,
           url: element.html_url,
+
         };
         this.repositoryList.push(repository);
       });
